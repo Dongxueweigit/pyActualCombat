@@ -11,6 +11,7 @@
 2. run(km)用于骑行，每骑行10km小号电量1度当电量耗尽时调用Bicycle的run方法骑行
 显示骑行结果：通过传入的里程数，显示骑行结果，及当电量耗尽，需要真正骑行的里程数
 """
+import yaml
 
 
 class Bicycle():
@@ -36,8 +37,24 @@ class Ebicycle(Bicycle):
         else:
             print(f"已用电行驶：{km} km\n剩余电量：{self.battery_level - km / 10}")
 
-#入口函数
+
+# 入口函数
 if __name__ == '__main__':
+    '''
     eb = Ebicycle(10)
     eb.fill_charge(1)
     eb.run(120)
+    '''
+    # 通过读取yml配置文件的方式读取参数值
+    with open("bacycle_config.yml") as f:
+        datas = yaml.safe_load(f)
+
+    #print(datas['e1_level'])
+    # battery_level = datas['e1_level']['battery_level']
+    # run_km = datas['e1_level']['run_km']
+
+    battery_level = datas['default']['battery_level']
+    run_km = datas['default']['run_km']
+
+    eb = Ebicycle(battery_level)
+    eb.run(run_km)
