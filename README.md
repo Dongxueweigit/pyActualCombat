@@ -24,7 +24,7 @@ python_pratice/sendGifts
 3. 定义工资查询模块selecte_money，用来展示工资数额
 4. 定义一个启动模块start，启动展示最终存款金额
 
-## python实战-骑电动车
+## python实战1-骑电动车
 
 ### 父类：Bicycle
 
@@ -40,3 +40,14 @@ python_pratice/sendGifts
 ### 显示骑行结果
 
 通过传入的里程数，显示骑行结果，及当电量耗尽，需要真正骑行的里程数
+
+## python实战2-回合制格斗游戏
+
+### 需求：
+
+一个回合制游戏，每一个角色都有hp和power，hp代表血量，power代表共计力，hp的初始值为1000，power的初始值为200。两个hp进行对比，血量剩余多的人获胜。
+
+### 定义一个fight方法：
+
+1. my_hp = hp -enemy_power
+2. enemy_final_hp = enemy_hp - my_power 
